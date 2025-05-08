@@ -1,0 +1,160 @@
+/* IMORTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Lexend+Deca:wght@100..900&display=swap');
+
+
+/* RESET CSS */
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    padding : 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+button{
+    font-family: inherit;
+    border-color: inherit;
+    border-width: inherit;
+    color : inherit;
+    background-color: inherit;
+    cursor: pointer;
+}
+/* CUSTOM PROPERTIES */
+:root{
+    /* colors */
+    /* primary */
+    --clr-bright-orange : 31 77% 52%;
+    --clr-dark-cyan : 184 100% 22%;
+    --clr-very-dark-cyan : 179 100% 13%;
+
+    /* neutral */
+    --clr-white-100 : 0 0% 100% ;
+
+    --clr-white-075 : 0 0% 100% / 0.75;
+    --clr-light-gray : 0 0% 95%;
+
+    /* font-families */
+    --ff-lexend : "Lexend Deca", sans-serif;
+    --ff-big-sh : "Big Shoulders", sans-serif;
+
+    /* font-weight */
+    --fw-normal : 400;
+    --fw-bold : 700;
+
+    /* typography */
+    --fs-200 : .5rem;
+    --fs-300 : .75rem;
+    --fs-400 : 1rem;
+    --fs-500 : 1.25rem;
+    --fs-600 : 1.50rem;
+    --fs-700 : 1.75rem;
+    --fs-800 : 2rem;
+    --fs-900 : 2.5rem;
+
+    /* margin and padding*/
+    --mb : 1.5rem;
+}
+/* UTILITY CLASSES */
+
+.text-bright-orange{
+    color: hsl(var(--clr-bright-orange));
+}
+.text-dark-cyan{
+    color: hsl(var(--clr-dark-cyan));
+}
+.text-very-dark-cyan{
+    color: hsl(var(--clr-very-dark-cyan));
+}
+
+.bg-bright-orange{
+    background-color: hsl(var(--clr-bright-orange));
+}
+.bg-dark-cyan{
+    background-color: hsl(var(--clr-dark-cyan));
+}
+.bg-very-dark-cyan{
+    background-color: hsl(var(--clr-very-dark-cyan));
+}
+.flow > *:not(:last-child){
+    margin-bottom: var(--mb,1rem);
+}
+/* GENERAL CLASSES */
+body{
+    min-height: 100vh;
+    background-color: hsl(var(--clr-light-gray));
+    font-family: var(--ff-lexend);
+    font-weight: var(--fw-normal);
+    line-height: 1.4;
+    color : hsla(var(--clr-white-075));
+    display: grid;
+    grid-template-rows: 1fr 5rem;
+    
+}
+/* LAYOUT */
+.container{
+    display: grid;
+    place-content: center;
+    padding-inline: 2rem;
+    padding-block: 4rem;
+}
+/* COMPONENT */
+
+.card-list{
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 480px;
+}
+.card_container{
+    padding :2rem;
+}
+.card_container > *:not(:last-child){
+    margin-bottom: var(--mb);
+}
+
+.card_title{
+    font-family: var(--ff-big-sh);
+    font-size: var(--fs-900);
+    text-transform: uppercase;
+    color : hsl(var(--clr-white-100));
+}
+.card_summary{
+    line-height: 1.6;
+}
+
+.primary-btn{
+    border-radius: 100px;
+    padding :12px 24px;
+    background-color: hsl(var(--clr-white-100));
+    border : white 1px solid;
+}
+
+.primary-btn:hover{
+    background-color: transparent;
+    color : hsl(var(--clr-white-100));
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:786px) {
+  
+    .card-list{
+        display: flex;
+        max-width: 920px;
+
+    }
+    .primary-btn{
+        margin-top: 4rem;
+    }
+    
+}
